@@ -10,6 +10,9 @@
 
 # API 설계
 
+## DB 설계
+![Final-Project ERD](https://github.com/MySprtlty/Message-Board-Application/assets/89295517/3178c0b5-0759-43e9-9e30-6568b9f35c29)
+
 ## User 라우터
 
 ### 내 정보 요청 API
