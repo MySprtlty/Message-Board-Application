@@ -1,22 +1,17 @@
 # 프로젝트 개요
-
 - 이 프로젝트는 게시글, 좋아요, 팔로우, 댓글 기능이 있는 게시판 프로젝트입니다.
-
-# 프로젝트 적용 규칙
-
+## 프로젝트 적용 규칙
 - REST기반으로 API를 설계하였습니다
 - REST API설계 기본 규칙을 따라 개발하였습니다
-- [REST API 설계 참고 사이트]
-
-# API 설계
-
-## DB 설계
+- [REST API 설계 참고 사이트](https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html)
+---
+# DB 설계
 ![Final-Project ERD](https://github.com/MySprtlty/Message-Board-Application/assets/89295517/3178c0b5-0759-43e9-9e30-6568b9f35c29)
 
-## User 라우터
+# API 설계
+## 1. User 라우터
 
-### 내 정보 요청 API
-
+### 1) 내 정보 요청 API
 - Request: GET
 - Path: /user
 
@@ -33,7 +28,7 @@
 | result  | 1     | success/fail | 회원 가입 성공/실패 여부    |
 | error   | 1     | 에러 문자열  | 회원 가입 실패 시 실패 이유 |
 
-### 내 정보 수정 API
+### 2) 내 정보 수정 API
 
 - Request: PATCH
 - Path: /user
@@ -44,7 +39,7 @@
 | name      | String | 필수     | 회원 이름     |
 | password  | String | 필수     | 회원 비밀번호 |
 
-### 지정 사용자 정보 조회 API
+### 3) 지정 사용자 정보 조회 API
 
 - Request: GET
 - Path: /user/:user-id
@@ -55,7 +50,7 @@
 | name      | String | 필수     | 회원 이름     |
 | password  | String | 필수     | 회원 비밀번호 |
 
-### 지정 사용자 작성댓글 조회 API
+### 4) 지정 사용자 작성댓글 조회 API
 
 - Request: GET
 - Path: /user/:user-id/comments
@@ -66,7 +61,7 @@
 | name      | String | 필수     | 회원 이름     |
 | password  | String | 필수     | 회원 비밀번호 |
 
-### 지정 사용자 작성게시글 조회 API
+### 5) 지정 사용자 작성게시글 조회 API
 
 - Request: GET
 - Path: /user/:user-id/postings
@@ -77,9 +72,9 @@
 | name      | String | 필수     | 회원 이름     |
 | password  | String | 필수     | 회원 비밀번호 |
 
-## Auth 라우터
+## 2. Auth 라우터
 
-### 회원가입 HTML 요청 API
+### 1) 회원가입 HTML 요청 API
 
 - Request: GET
 - Path: /auth/join
@@ -97,7 +92,7 @@
 | result  | 1     | success/fail | 회원 가입 성공/실패 여부    |
 | error   | 1     | 에러 문자열  | 회원 가입 실패 시 실패 이유 |
 
-### 회원가입 요청 API
+### 2) 회원가입 요청 API
 
 - Request: POST
 - Path: /auth/join
@@ -108,7 +103,7 @@
 | name      | String | 필수     | 회원 이름     |
 | password  | String | 필수     | 회원 비밀번호 |
 
-### 로그인 HTML 요청 API
+### 3) 로그인 HTML 요청 API
 
 - Request: GET
 - Path: /auth/login
@@ -119,7 +114,7 @@
 | name      | String | 필수     | 회원 이름     |
 | password  | String | 필수     | 회원 비밀번호 |
 
-### 로그인 요청 API
+### 4) 로그인 요청 API
 
 - Request: POST
 - Path: /auth/login
@@ -130,7 +125,7 @@
 | name      | String | 필수     | 회원 이름     |
 | password  | String | 필수     | 회원 비밀번호 |
 
-### 로그아웃 요청 API
+### 5) 로그아웃 요청 API
 
 - Request: GET
 - Path: /auth/logout
@@ -141,9 +136,8 @@
 | name      | String | 필수     | 회원 이름     |
 | password  | String | 필수     | 회원 비밀번호 |
 
-## Auth 라우터
-
-### 모든 게시글 조회 API
+## 3. Board 라우터
+### 1) 모든 게시글 조회 API
 
 - Request: GET
 - Path: /board
@@ -161,7 +155,7 @@
 | result  | 1     | success/fail | 회원 가입 성공/실패 여부    |
 | error   | 1     | 에러 문자열  | 회원 가입 실패 시 실패 이유 |
 
-### 게시글 업로드 API
+### 2) 게시글 업로드 API
 
 - Request: POST
 - Path: /board
@@ -172,7 +166,7 @@
 | name      | String | 필수     | 회원 이름     |
 | password  | String | 필수     | 회원 비밀번호 |
 
-### 특정 사용자가 작성한 모든 게시글 조회 API
+### 3) 특정 사용자가 작성한 모든 게시글 조회 API
 
 - Request: GET
 - Path: /board/:user-id
@@ -183,7 +177,7 @@
 | name      | String | 필수     | 회원 이름     |
 | password  | String | 필수     | 회원 비밀번호 |
 
-### 내 게시글 수정 API
+### 4) 내 게시글 수정 API
 
 - Request: POST
 - Path: /board/:posting-id/edit
@@ -194,7 +188,7 @@
 | name      | String | 필수     | 회원 이름     |
 | password  | String | 필수     | 회원 비밀번호 |
 
-### 내 게시글 삭제 API
+### 5) 내 게시글 삭제 API
 
 - Request: GET
 - Path: /board/:posting-id/remove
@@ -205,9 +199,9 @@
 | name      | String | 필수     | 회원 이름     |
 | password  | String | 필수     | 회원 비밀번호 |
 
-## Posting 라우터
+## 4. Posting 라우터
 
-### 특정 게시글 모든 댓글 조회 API
+### 1) 특정 게시글 모든 댓글 조회 API
 
 - Request: GET
 - Path: /posting/:posting-id/comments
@@ -225,7 +219,7 @@
 | result  | 1     | success/fail | 회원 가입 성공/실패 여부    |
 | error   | 1     | 에러 문자열  | 회원 가입 실패 시 실패 이유 |
 
-### 특정 게시글 댓글 등록 API
+### 2) 특정 게시글 댓글 등록 API
 
 - Request: POST
 - Path: /posting/:posting-id/comments
@@ -236,7 +230,7 @@
 | name      | String | 필수     | 회원 이름     |
 | password  | String | 필수     | 회원 비밀번호 |
 
-### 특정 게시글 댓글 삭제 API
+### 3) 특정 게시글 댓글 삭제 API
 
 - Request: DELETE
 - Path: /posting/:posting-id/comments/:comment-id
@@ -247,7 +241,7 @@
 | name      | String | 필수     | 회원 이름     |
 | password  | String | 필수     | 회원 비밀번호 |
 
-### 특정 게시글 댓글 수정 API
+### 4) 특정 게시글 댓글 수정 API
 
 - Request: PUT
 - Path: /posting/:posting-id/comments/:comment-id
@@ -258,9 +252,9 @@
 | name      | String | 필수     | 회원 이름     |
 | password  | String | 필수     | 회원 비밀번호 |
 
-## Follow 라우터
+## 5. Follow 라우터
 
-### 특정 사용자 팔로우한 사용자 조회 API
+### 1) 특정 사용자 팔로우한 사용자 조회 API
 
 - Request: GET
 - Path: /follow/:user-id
@@ -278,7 +272,7 @@
 | result  | 1     | success/fail | 회원 가입 성공/실패 여부    |
 | error   | 1     | 에러 문자열  | 회원 가입 실패 시 실패 이유 |
 
-### 특정 사용자 팔로우 요청 API
+### 2) 특정 사용자 팔로우 요청 API
 
 - Request: POST
 - Path: /follow/:user-id/do
@@ -289,7 +283,7 @@
 | name      | String | 필수     | 회원 이름     |
 | password  | String | 필수     | 회원 비밀번호 |
 
-### 특정 사용자 언팔로우 요청 API
+### 3) 특정 사용자 언팔로우 요청 API
 
 - Request: DELETE
 - Path: /follow/:user-id/undo
@@ -300,9 +294,9 @@
 | name      | String | 필수     | 회원 이름     |
 | password  | String | 필수     | 회원 비밀번호 |
 
-## Like 라우터
+## 6. Like 라우터
 
-### 특정 게시글 좋아요 요청 API
+### 1) 특정 게시글 좋아요 요청 API
 
 - Request: POST
 - Path: /like/:posting-id/do
@@ -320,7 +314,7 @@
 | result  | 1     | success/fail | 회원 가입 성공/실패 여부    |
 | error   | 1     | 에러 문자열  | 회원 가입 실패 시 실패 이유 |
 
-### 특정 게시글 좋아요 취소 요청 API
+### 2) 특정 게시글 좋아요 취소 요청 API
 
 - Request: DELETE
 - Path: /like/:posting-id/undo
@@ -331,4 +325,3 @@
 | name      | String | 필수     | 회원 이름     |
 | password  | String | 필수     | 회원 비밀번호 |
 
-[REST API 설계 참고 사이트]: https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html
