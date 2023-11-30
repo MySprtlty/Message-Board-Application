@@ -39,7 +39,7 @@
 |id| String| 필수 |회원 ID|
 |name |String |필수| 회원 이름|
 |password |String |필수 |회원 비밀번호|
-|phone| String |필수 |회원 핸드폰번호|
+|phone| String |필수 |회원 핸드폰 번호|
 |address| String |필수X| 회원 주소|
 
 - Response Format: JSON
@@ -55,7 +55,7 @@
 
 |Parameter|타입|필수여부|설명|
 |:---|:---|:---|:---|
-|user_id |String |필수 |정보 조회하고싶은 사용자 ID|
+|user_id |String |필수 |정보 조회하고 싶은 사용자 ID|
 
 - Response Format: JSON
 
@@ -146,8 +146,8 @@
 
 |Parameter|타입|필수여부|설명|
 |:---|:---|:---|:---|
-|id |String 필수 |로그인하고자하는 회원 ID|
-|password |String 필수 |로그인하고자하는 회원 비밀번호|
+|id |String |필수 |로그인하고자하는 회원 ID|
+|password |String | 필수 |로그인하고자하는 회원 비밀번호|
 
 - Response Format: JSON
 
